@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+  <div class="col-6 offset-3">
+    <h1>SignUp on Wandelust</h1>
+    <form action="/signup" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="Username" class="form-label">Username</label>
+        <textarea
+          rows="1"
+          name="newList[Username]"
+          id="Username"
+          type="text"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good</div>
+      </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <textarea
+              rows="1"
+              name="newList[email]"
+              id="email"
+              type="email"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <textarea
+              rows="1"
+              name="newList[password]"
+              id="password"
+              type="password"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
+          <button class="btn btn-success">SignUp</button>
+
+    </form>
+  </div>
+</div>
