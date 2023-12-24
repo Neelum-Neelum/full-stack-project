@@ -12,19 +12,18 @@
         alt="Listing_image"
       />
       <div class="card-body">
-        <p class="card-text">
-          <br />
-          <%= h_listing.description %> <br />
-          &#8377;<%= h_listing.price.toLocaleString("en-IN") %> <br />
-          <%= h_listing.location %> <br />
-          <%= h_listing.country %>
-        </p>
+        <p class="card-text">Owned by:<b><%= h_listing.owner.username %></b></p>
+          <P><%= h_listing.description %></P>
+          <P>&#8377;<%= h_listing.price.toLocaleString("en-IN") %></P>
+          <P><%= h_listing.location %> </P>
+          <P><%= h_listing.country %></P>
       </div>
     </div>
 
     <br />
   </div>
 
+  
   <div class="btns mt-5 mb-5">
     <a
       href="/listings/<%= h_listing._id %>/edit"
@@ -35,6 +34,7 @@
       <button class="btn btn-dark offset-4">Delete</button>
     </form>
   </div>
+
 
   <hr>
 <div class="col-8 offset-3 mb-3">
