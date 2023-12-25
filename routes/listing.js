@@ -1,24 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
-const {listingSchema} = require("../schema.js");
-const ExpressError = require("../utils/ExpressError.js");
 const Listing = require("../models/listing.js");
 const Review = require("../models/review.js");
-const {isLoggedIn, isOwner} = require("../middleware.js");
-
-
-
-//  +++++++++   converting joi into middleware  ++++++++
-const validateListing = (req, res, next) => {
-    console.log(req.body.newList);
-    let data = listingSchema.validate(req.body.newList);
-    if (!data) {
-      throw new ExpressError(400, "errMsg");
-    } else {
-      next();
-    }
-  };
+const {isLoggedIn, isOwner, validateListing} = require("../middleware.js");
 
 // ++++++++++++++++++++  (index route)  ++++++++++++++++
 router.get(
@@ -52,7 +37,7 @@ router.get(
     "/:id",
     wrapAsync(async (req, res) => {
       let { id } = req.params;
-      const h_listing = await Listing.findById(id).populate("reviews").populate("owner");
+      const h_listing = await Listing.findById(id).populate({path: "reviews", populate: {path: "author"}}).populate("owner");
       if(!h_listing){
         req.flash("error", "listing you requested for does not exist");
         res.redirect("/listings");
