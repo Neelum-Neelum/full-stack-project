@@ -1,4 +1,7 @@
 <% layout("/layouts/boilerplate.ejs") %>
+<script>
+  const coordinates = "<%- JSON.stringify(h_listing.geometry.coordinates) %>";
+</script>
 
 <body>
   <div class="row mt-4">
@@ -7,7 +10,7 @@
     </div>
     <div class="card col-6 offset-3 show-card listing-card">
       <img
-        src=" <%= h_listing.image %>"
+        src=" <%= h_listing.image.url %>"
         class="card-img-top show-img"
         alt="Listing_image"
       />
@@ -37,9 +40,10 @@
   <% } %>
 
 
-<hr>
+
 <div class="col-8 offset-3 mb-3">
   <% if(currUser) { %>
+    <hr>
     <h4>Leave a review</h4>
     <form action="/listings/<%= h_listing._id%>/reviews" method="POST" novalidate class="needs-validation">
         <!-- <div class="mb-3 mt-3">
@@ -76,8 +80,9 @@
 
 
     <!-- review cards -->
-    <p><b>All Reviews</b></p>
+    <% if(h_listing.reviews.length>0) { %>
     <div class="row">
+      <p><b>All Reviews</b></p>
     <% for(review of h_listing.reviews) { %>
       <div class="card col-5 ms-3 mb-3">
         <div class="card-body">
@@ -91,6 +96,17 @@
       </div>
     <% } %>
   </div>
+  <% } %>
+ 
 
+ 
 </div>
+<div class="col-8 offset-3 mb-3">
+  <h3>where you'll be</h3>
+  <div id="map"></div>
+</div>
+<script src="/js/map.js"></script>
+
+
+
 

@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV != "production"){
+  require('dotenv').config();
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -29,12 +33,12 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
+app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(__dirname, "/public")));
 
 const sessionOptions = {
   secret: "mysupersecretcode",
@@ -62,20 +66,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-  res.locals.success =req.flash("success");
-  res.locals.error =req.flash("error");
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
   res.locals.currUser = req.user;
   next();
 });
-
-// app.get("/demouser", async (req, res) =>{
-//   let fakeUser = new User({
-//     email: "student@gmail.com",
-//     username: "delta-student"
-//   });
-//  let registerUser = await User.register(fakeUser, "Helloworld");
-//  res.send(registerUser);
-// });
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
@@ -83,13 +78,13 @@ app.use("/", userRouter);
 
 app.all("*", (req, res, next) => {
   next((new ExpressError(404, "Page not found")));
-})
+});
+
 
 // ++++++++++++++++++++   Middleware   +++++++++++++++++++++
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went wrong!" } = err;
   res.status(statusCode).render("error.ejs", { message });
-  // res.status(statusCode).send(message);
 });
 
 app.listen(8080, () => {

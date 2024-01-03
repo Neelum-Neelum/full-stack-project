@@ -60,7 +60,7 @@ font-size: 2rem;
 }
 
 /*  +++++++++++++++++++++++++++++++++++++++++++    cards styling   +++++++++++++++++++++++++++++++++++++ */
-.listing-card {
+.card {
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -117,4 +117,11 @@ font-size: 2rem;
 .show-card{
     padding-left: 0;
     padding-right: 0;
+}
+
+/* ++++++++++++++++++++++++++   Map Styling  ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+#map{
+    height: 400px;
+    width: 100vh;
 }
