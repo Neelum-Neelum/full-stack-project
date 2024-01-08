@@ -1,6 +1,7 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <script>
-  const coordinates = "<%- JSON.stringify(h_listing.geometry.coordinates) %>";
+  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  let coordinates = "<%- JSON.stringify(h_listing.geometry.coordinates) %>";
 </script>
 
 <body>
@@ -96,11 +97,9 @@
       </div>
     <% } %>
   </div>
-  <% } %>
- 
-
- 
+  <% } %> 
 </div>
+
 <div class="col-8 offset-3 mb-3">
   <h3>where you'll be</h3>
   <div id="map"></div>
