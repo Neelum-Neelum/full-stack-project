@@ -91,6 +91,12 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+
+// ++++++++++++++++++++++++++++++  Home route +++++++++++++++++++++++++++++
+app.get("/", (req, res) => {
+  res.render("listings/home.ejs");
+});
+
 app.all("*", (req, res, next) => {
   next((new ExpressError(404, "Page not found")));
 });
