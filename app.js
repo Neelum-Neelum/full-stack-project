@@ -88,9 +88,7 @@ app.use((req, res, next) => {
 });
 
 // ++++++++++++++++++++++++++++++  Home route +++++++++++++++++++++++++++++
-app.get("/", (req, res) => {
-  res.render("listings/home.ejs");
-});
+
 
 
 app.use("/listings", listingRouter);
