@@ -27,7 +27,7 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -46,13 +46,18 @@
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="/listings/new">Airbnb your home</a>
           <% if(!currUser){ %>
-          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <a id="nav-text" class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a id="nav-text" class="nav-link" href="/login"><b>Log in</b></a>
           <% } %>
           <% if(currUser){ %> 
-          <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <a id="nav-text" class="nav-link" href="/logout"><b>Log out</b></a>
           <% } %>
         </div>
       </div>
     </div>
   </nav>
+
+ 
+  
+
+ 

@@ -3,17 +3,32 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border: 2px solid red !important;
 }
 
-.container{
+.cont{
     flex: 1;
+    width: 100% !important;
+    height: 100%;
+    margin-bottom: 20px;
+    border: 2px solid green;
+    margin-top: 30px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+   
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++   navbar styling   ++++++++++++++++++++++++++++++++++++++++ */
 
 .navbar{
-    height: 5rem;
-    background-color: white;
+    width: 100% !important;
+    background-color: rgb(237, 237, 181);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 12px;
 }
 
 .fa-compass{
@@ -24,8 +39,23 @@ font-size: 2rem;
 .nav-link {
     color:  #222222 !important;
 }
-
+/* +++++++++++++++++++   toggle and options styling  ++++++++++++++++++++++++++++++++++++++ */
+.tax-toggle{
+    border: 1px solid black;
+    width: 270px !important;
+    font-size: 1rem;
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 1rem 1rem;
+    margin-left: 6rem !important;
+    margin-right: 0!important;
+    display: flex;
+    align-items: center;
+  }
 /* +++++++++++++++++++++++++++++++++++++++++++++   footer styling   +++++++++++++++++++++++++++++++++  */
+footer{
+    width: 100%;
+}
 .f-info-links a {
     color: #222222;
     text-decoration: none;
@@ -53,26 +83,32 @@ font-size: 2rem;
     text-align: center;
     height: 8rem;
    display: flex;
-   background-color: #ebebeb;
    flex-wrap: wrap;
    justify-content: center;
    align-items: space-evenly;
+   background-color: rgb(237, 237, 181);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*  +++++++++++++++++++++++++++++++++++++++++++    cards styling   +++++++++++++++++++++++++++++++++++++ */
 .card {
     border: none !important;
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
+    height: 18rem !important;
+    
 }
 
 .card-img-top{
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover !important;
+    margin-bottom: 0.6rem !important;
+    box-shadow: 0 25px 25px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(176, 7, 7, 0.19) !important;
 }
 
 .card-body{
     padding: 0 !important;
+    line-height: 1.2rem !important;  
 }
 
 .card-text p{
@@ -81,6 +117,7 @@ font-size: 2rem;
 
 .listing-link{
     text-decoration: none;
+    height: 22rem !important;
 }
 
 /*   ++++++++++++++++++++++++++++    card effect   ++++++++++++++++++++++++++++++++++   */
@@ -125,4 +162,120 @@ font-size: 2rem;
     height: 400px;
     width: 100vh;
 }
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                Responsive
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media(max-width: 768px){
+    .cont{
+        max-width: 750px !important;
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+    }
+    #filters{
+        max-width: 750px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    .navbar{
+        max-width: 768px !important;
+        overflow: hidden;
+    }
+    
+    .tax-toggle{
+        margin-left: 3rem !important;
+        margin-right: 3rem !important;
+    }
+
+    /* +++++++++ show page +++++++++++++++++ */
+       .offset-3{
+        margin-left: 13% !important;
+       }
+       .col-6{
+        width: 75% !important;
+       }
+}
+
+
+@media (max-width: 375px) {
+   .cont{
+     max-width: 345px !important;
+     margin-left: 0 !important;
+     margin-right: 0 !important;
+   }
+   
+   #filters{
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 340px !important;
+    justify-content: center;
+    align-items: center;
+   }
+   
+}  
+
+
+/* media size 320 */
+@media(max-width:320px) {
+    .cont{
+        max-width: 320px !important;
+        margin-top: 1rem !important;
+    }
+    #filters{
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center !important;
+        margin: 0;
+      }
+      .wrapper{
+        overflow: hidden !important;
+      }
+   
+    .tax-toggle{
+        font-size: 0.6rem !important;
+        width: 12rem !important;
+        height: 2.5rem !important;
+        padding: 1rem 1rem !important;
+        justify-content: center;
+      } 
+      .card-img-top{
+        height: 200px !important;
+      }
+    /* show page responsiveness */
+    .row{
+       max-width: 320px !important;
+    }
+    .col-6 {
+        width: 90% !important;
+        margin-left: 7% !important;
+    }
+    .card-body p{
+        margin: 0 !important;
+    }
+    .mapboxgl-map{
+        width: 280px !important;
+        height: 200px !important;
+    }
+    /* new listing responsiveness */
+    .col-8{
+        width: 90% !important;
+        margin-left: 5% !important;
+    }
+    .listing-link{
+        height: 12rem !important;
+        padding-right: 0 !important;
+        margin-bottom: 5rem !important;
+    }
+    .card-img-overlay{
+        padding: 0 !important;
+        max-width: 320px !important;
+        height: 250px !important;
+    }
+} 
+
+
 

@@ -1,99 +1,73 @@
 <% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/slider.css">
     
 <style>
   #filters{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-  }
-
-  .filter{
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.7;
-  }
-
-  .filter:hover{
-    opacity: 1;
-    cursor: pointer;
-  }
-
-  .filter p {
-    font-size: 0.8rem;
+    margin: 0;
   }
 
   .tax-info{
     display: none;
   }
 
-  .tax-toggle{
-    border: 1px solid black;
-    border-radius: 1rem;
-    height: 3rem;
-    padding: 1rem;
-    margin-left: 3rem;
-    display: flex;
-    align-items: center;
-  }
+
+
 </style>
 
     <div id="filters">
-      <div class="filter">
-        <i class="fa-solid fa-fire"></i>
-         <p>Trending</p>
+      <div class="wrapper">
+        <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+        <ul class="tabs-box">
+  
+          <li class="tab active">
+            <i class="fa-solid fa-fire"></i>
+           <p class="para">Trending</p></li>
+  
+          <li class="tab"> 
+            <i class="fa-solid fa-bed"></i>
+           <p class="para">Rooms</p></li>
+  
+          <li class="tab"> 
+            <i class="fa-solid fa-city"></i>
+           <p class="para">Iconic Cities</p></li>
+  
+          <li class="tab">
+            <i class="fa-solid fa-mountain-sun"></i>
+            <p class="para">Mountains</p></li>
+  
+          <li class="tab"> 
+            <i class="fa-brands fa-fort-awesome"></i>
+           <p class="para">Castle</p></li>
+  
+          <li class="tab"> 
+            <i class="fa-solid fa-person-swimming"></i>
+           <p class="para">Amazing Pools</p></li>
+  
+          <li class="tab">
+            <i class="fa-solid fa-campground"></i>
+           <p class="para">Camping</p></li>
+  
+          <li class="tab"> 
+            <i class="fa-solid fa-tractor"></i>
+           <p class="para">Farms</p></li>
+  
+          <li class="tab">
+            <i class="fa-brands fa-galactic-senate"></i>
+           <p class="para">Arctic</p></li>
+  
+          <li class="tab">
+            <i class="fa-solid fa-ship"></i>
+           <p class="para">Boats</p></li>
+  
+          <li class="tab">
+            <i class="fa-solid fa-igloo"></i>
+            <p class="para">Doms</p></li>
+        </ul>
+        <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
       </div>
-
-      <div class="filter">
-        <i class="fa-solid fa-bed"></i>
-         <p>Rooms</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-solid fa-city"></i>
-         <p>Iconic Cities</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-solid fa-mountain-sun"></i>
-         <p>Mountains</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-brands fa-fort-awesome"></i>
-         <p>Castle</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-solid fa-person-swimming"></i>
-         <p>Amazing Pools</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-solid fa-campground"></i>
-         <p>Camping</p>
-      </div>
-       
-      <div class="filter">
-        <i class="fa-solid fa-tractor"></i>
-         <p>Farms</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-brands fa-galactic-senate"></i>
-         <p>Arctic</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-solid fa-igloo"></i>
-         <p>Doms</p>
-      </div>
-
-      <div class="filter">
-        <i class="fa-solid fa-ship"></i>
-         <p>Boats</p>
-      </div>
-
       <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -101,10 +75,10 @@
         </div>
       </div>
 
-    </div>
+</div>
 
     <!--              cards                    -->
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for(let listing of allListings) { %>
           <a href="/listings/<%=listing._id %>" class="listing-link">
             <div class="card col listing-card">
@@ -135,5 +109,6 @@
        }
       });
     </script>
+    <script src="/js/slider.js"></script>
 </body>
 
