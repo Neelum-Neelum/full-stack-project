@@ -90,11 +90,13 @@ app.use((req, res, next) => {
 // ++++++++++++++++++++++++++++++  Home route +++++++++++++++++++++++++++++
 
 
-
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+app.get("/", (req, res) => {
+  res.render("listings/home.ejs");
+});
 
 
 app.all("*", (req, res, next) => {

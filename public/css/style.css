@@ -24,7 +24,8 @@ body{
 
 .navbar{
     width: 100% !important;
-    background-color: rgb(237, 237, 181);
+    background: rgb(238,152,197);
+    background: linear-gradient(90deg, rgba(238,152,197,1) 0%, rgba(114,29,103,1) 50%, rgba(239,140,193,1) 100%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-bottom: 12px;
 }
@@ -84,7 +85,8 @@ footer{
    flex-wrap: wrap;
    justify-content: center;
    align-items: space-evenly;
-   background-color: rgb(237, 237, 181);
+   background: rgb(238,152,197);
+   background: linear-gradient(90deg, rgba(238,152,197,1) 0%, rgba(114,29,103,1) 50%, rgba(239,140,193,1) 100%);
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
