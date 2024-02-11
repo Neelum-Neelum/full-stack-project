@@ -1,0 +1,64 @@
+body{
+    /* background: rgb(2,0,36); */
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(118,50,86,1) 47%, rgba(3,6,33,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home{
+    max-width: 800px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: xx-large;
+    border: 3px solid black;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.home h1{
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+a{
+    color: antiquewhite;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Responsiveness  +++++++++++++++++++++++++++++++  */
+@media screen and (max-width: 768px){
+    .home{
+        height: 250px !important;
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 555px){
+    .home{
+        height: 150px !important;
+        max-width: 320px;
+        border: 1px solid rgb(243, 237, 237);
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .home h1{
+        font-size: 2.3rem;
+    }
+    a{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .home h1{
+        font-size: 1.9rem;
+    }
+}
