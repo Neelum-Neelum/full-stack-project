@@ -93,8 +93,9 @@ body {
   pointer-events: none;
 }
 .tabs-box .tab.active{
-  background: #5372F0;
-    border-radius: 30px;
+  background: #8a287d;
+  border-radius: 30px;
+  color: white;
   border-color: transparent;
 }
 
